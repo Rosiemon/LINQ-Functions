@@ -34,14 +34,16 @@ namespace LINQfunctions
                 var gradeSum = (from individualGrade in averagePerson select individualGrade).Sum();
                 var NewAverage = (gradeSum / gradeCount);
                 classAverage.Add(NewAverage);
-                Console.WriteLine("Student Average Grade:");
-                Console.WriteLine(NewAverage);
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                Console.WriteLine("Student Average Grade: {0}", NewAverage);
+                Console.ResetColor();
             }
             var ClassCount = (from counting in classAverage select counting).Count();
             var ClassSum = (from summing in classAverage select summing).Sum();
             var ClassAverage = (ClassSum / ClassCount);
-            Console.WriteLine("The Classroom Grade Average Is:");
-            Console.WriteLine(ClassAverage);
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.WriteLine("The Classroom Grade Average Is: {0}", ClassAverage);
+            Console.ResetColor();
             Console.ReadLine();
         }
     }

@@ -12,7 +12,9 @@ namespace LINQfunctions
         {
             List<string> Words = new List<string>();
             Console.WriteLine("Please enter a word: ");
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
             string Sentance = Console.ReadLine();
+            Console.ResetColor();
             Sentance = String.Concat(Sentance.ToUpper().OrderBy(alphabetical => alphabetical));
             foreach (char Letter in Sentance)
             {
@@ -21,9 +23,11 @@ namespace LINQfunctions
             var query = Words.GroupBy(x => x[0]);
             foreach (var letter in query)
             {
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
                 Console.Write("{0}{1} ", letter.Key, letter.Count());
+                Console.ResetColor();
             }
-            Console.WriteLine();
+            Console.ReadLine();
         }
     }
 }

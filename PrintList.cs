@@ -27,8 +27,11 @@ namespace LINQfunctions
 
             foreach (string item in animals)
             {
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 Console.WriteLine(item);
+                Console.ResetColor();
             }
+            Console.ReadLine();
         }
     }
 }
